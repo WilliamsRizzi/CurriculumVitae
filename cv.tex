@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+\usepackage{longtable}
+
+\usepackage[maxbibnames=99]{biblatex}
+\addbibresource{biblio.bib}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Williams \textsc{Rizzi}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Cavalese, Italy  | 5 December 1994 \\
+    \textsc{Address:}   & Via Felicetti 6, 38037, Predazzo, Italy \\
+    \textsc{Phone:}     & +39 338 3334895\\
+    \textsc{email:}     & 
+    \href{mailto:rizzi.williams@me.com}{rizzi.williams@me.com}\\
+    \textsc{Github:}    & \href{https://github.com/WilliamsRizzi}{williamsrizzi}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Research Experience}
+\begin{longtable}{r|p{8.5cm}}
+
+ \textsc{February 2018 - Current} & Application of Predictive Monitoring and Management Techniques to Trentino health system data (Research consultant) \\
+%  &\emph{Process \& Data Intelligence}\\
+ &\textbf{Fondazione Bruno Kessler}\\
+ &\footnotesize{Aim of the project was to explore a possible application of Predictive Process Monitoring (PPM) techniques to enhance the quality of the services in Trentino. My role focused on: data integration, data exploration, preprocessing of the data to make them suitable for the application of PPM techniques, and testing and evaluation of the developed solution. Work carried out under the supervision of Chiara Di Francescomarino and Chiara Ghidini.}\\\multicolumn{2}{c}{} \\
+
+\textsc{April 2017 - May 2017} & Development and testing of software and hardware solutions for electrode wear level analysis for industrial robotics applications (Research consultant)\\
+  &\emph{Embedded Electronics and Computing Systems}\\
+ &\textbf{Dipartimento di Ingegneria e Scienze dell’Informazione - University of Trento}\\
+ &\footnotesize{Aim of the project was to develop an optic hardware and software solution with enough processing power to carry out data gathering and diagnostic of the health status of welding electrodes. My role was to investigate the hardware components needed for the project, design the hardware arrangement, test the software strength and scalability, tune the custom software hyper-parameters, implement primitives to shot photos from custom hardware, build hardware and finally test and evaluate the proposed solution. The produced prototype is currently exploited by Sinterleghe S.r.l. who is planning to sell it to the production plants of well known car brands. Work carried out under the supervision of Fabiano Zenatti and Luigi Palopoli, in collaboration with Sinterleghe S.r.l.}\\\multicolumn{2}{c}{} \\
+ 
+  \textsc{February 2017 - June 2017} & Application of Predictive Monitoring and Management Techniques to bearing health-status prediction (Research project) \\
+%  &\emph{Process \& Data Intelligence}\\
+ &\textbf{Fondazione Bruno Kessler}\\
+ &\footnotesize{Aim of the project was to explore new application areas of Predictive Process Monitoring (PPM). The new field of application, chosen for the investigation, is signal processing w.r.t. bearing health-status prediction. My role focused on: literature review, identification of state of the art approaches, design of a suitable solution for the application of PPM techniques to signals received as inputs, and finally implementation, testing and evaluation of the developed solution. Work carried out under the supervision of Chiara Di Francescomarino, Chiara Ghidini, Marco Roveri and Andrea Passerini.}\\\multicolumn{2}{c}{} \\
+ 
+ \textsc{February 2016 - September 2016} & Combining NLP Approaches for Rule Extraction from Legal Documents (Thesis work)\\
+%   &\emph{Shape \& Evolve Living Knowledge}\\
+  &\textbf{Fondazione Bruno Kessler}\\
+ &\footnotesize{Aim of the project was to explore and produce a pipeline able to convert legal documents expressed in natural language into a rule based text. The work led to publication \cite{dragoni2016combining}. My role was to investigate, design, implement, test, and evaluate a pipeline able to extract rules from legal text via the Boxer machinery and a custom graph representation. Work carried out under the supervision of Mauro Dragoni and Chiara Ghidini.}\\\multicolumn{2}{c}{} \\
+ 
+  \textsc{September 2015 - August 2017} & Consultant for the municipality of Vigolana within the project 'HELP'\\
+  &\emph{European project ‘HELP’ Erasmus+}\\
+  &\textbf{ID: 2015-1-TR01-KA201-021415, strategical partnership }\\
+ &\footnotesize{Aim of the project was to produce teaching material for less ICT aware countries. My role as an ICT expert was to handle the chapters related to ICT awareness in the project outputs \footnote{’HELP’ Erasmus+ Results: http://www.dcechelp.eu/en/results}. Project developed under the supervision of Alessandra Piccoli and Aybike Kurt Gultekin.}\\\multicolumn{2}{c}{} \\
+ 
+  \textsc{May 2015 - August 2015} & Development of client-server solution for the Predictive Process Monitoring framework (Research consultant) \\
+%   &\emph{Shape \& Evolve Living Knowledge}\\
+ &\textbf{Fondazione Bruno Kessler}\\
+ &\footnotesize{Aim of the project was to enhance the code structure of the Predictive Monitoring Framework, to produce a Java Graphic User interface, and to implement a client-server structure to allow prediction requests devoted to the investigation of feasibility, the design, implementation, and testing of the client side of the existing machinery. The work led to publications \cite{DBLP:conf/caise/Francescomarino16} and \cite{DBLP:conf/bpm/FedericiRFDGMT15}. My role was to investigate feasibility, design, implementation and testing of the client side of the application in Java. Work carried out under the supervision of Chiara Di Francescomarino and Chiara Ghidini.}\\\multicolumn{2}{c}{} \\
+ 
+   \textsc{February 2015 - April 2015} & Programming consultant for the Predictive Process Monitoring project (Stage)\\
+%   &\emph{Shape \& Evolve Living Knowledge}\\
+  &\textbf{Fondazione Bruno Kessler}\\
+ &\footnotesize{Aim of the project was to extend the Predictive Process Monitoring framework with support for hyperparameter tuning. The work led to publications \cite{DBLP:journals/is/Francescomarino18} and \cite{DBLP:conf/caise/Francescomarino16}. My role was to investigate, design, implement, test, and evaluate statistical models able to track effectively and appropriately time slices in the Predictive Process Monitoring framework. Work carried out under the supervision of Chiara Di Francescomarino and Chiara Ghidini.}\\\multicolumn{2}{c}{} \\
+ 
+%   \textsc{March 2016 - April 2016} & Consultant to the Municipality of Vigolana within the ICT awareness project\\
+%  &\footnotesize{Aim of the project developing teaching material and hold lesson in schools to raise ICT awareness of pupils. My role was producing teaching material as ICT expert and hold lesson with pupils. Project developed in collaboration with local school with Matteo Zeni and Samuel Giacomelli.}\\\multicolumn{2}{c}{} \\
+\end{longtable}
+
+%Section: Education
+\section{Education}
+\begin{longtable}{rl}	
+ \textsc{Current} & Master in \textsc{Computer Science}, \textbf{Università degli studi di Trento}, Trento\\
+&\normalsize \textsc{Gpa}: 26/30{\hfill }\\&\\
+\textsc{November} 2016 & Undergraduate Degree in \textsc{Computer Science} \\& Final Grade: 89/110, \normalsize\textbf{Università degli studi di Trento}, Trento\\
+& Thesis: ``Towards an automated framework for mining rules from legal texts'' \\
+&\small Advisor: Raffaella \textsc{Bernardi}, Mauro \textsc{Dragoni} and Chiara \textsc{Ghidini}\\
+&\normalsize \textsc{Gpa}: 23/30{\hfill}\\&\\\\
+\textsc{July} 2013& Istituto di istruzione "\textsc{LA ROSA BIANCA} - Weisse Rose"\\
+& \textbf{Istituto tecnico commerciale ind. I.G.E.A.} - \textsc{Predazzo}\\
+& Diploma of Business Accountant | Final Grade: 76/100
+\end{longtable}
+
+%Section: Publications
+\section{Publications}
+\nocite{*}
+\printbibliography[heading=none]
+
+%Section: Further experiences
+\section{Further experiences}
+
+
+I have been working as a teacher of applied robotics for the Istituto Tecnico Tecnologico Buonarroti-Pozzo (Trento) between September 2017 and June 2018. 
+
+This experience gave me basic teaching skills and technical skills in machine vision, autonomous vehicle navigation, 3d-modeling, electrical engineering, and hardware design.
+
+During the course it has been developed a robot that participated to the RoboCUP Junior competition qualifying for the regionals, the nationals and, finally for the European championship.
+
+I have also worked as a florist, a waiter, an acrobatic bartender, a sales man in Italy, Germany, France and England for several Game Fairs and boutiques. I am passionate about sport and in particular about skiing.
+
+% %Section: Languages
+% \section{Languages}
+% \begin{tabular}{rl}
+%  \textsc{Italian:}&Mothertongue\\
+% \textsc{English:}&Fluent\\
+% \textsc{German:}&Basic Knowledge\\
+% \end{tabular}
+
+% \section{Computer Skills}
+% \begin{tabular}{rl}
+%  Fluent:& Python, Java, \textsc{C/C++}\\
+% Intermediate Knowledge:& Excel, Word, PowerPoint, Numbers, Keynote, Pages\\
+% & my\textsc{sql}, \textsc{html}, \textsc{css}, \textsc{javascript}, Access, \textsc{Linux}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+% \end{tabular}
+
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
